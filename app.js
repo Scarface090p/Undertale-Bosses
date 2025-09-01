@@ -1,4 +1,3 @@
-
 const DEFAULT_BOSS_PATTERNS = [
   {
     id: "Asriel_Genocide_Phase_1",
