@@ -1,1 +1,74 @@
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undertale Practice Tracker</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Undertale Practice Tracker</h1>
+    <nav>
+      <a href="#patterns">Boss Patterns</a>
+      <a href="#log">Practice Log</a>
+      <a href="#print">Printable Guide</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <p>Safe, offline-friendly tracker to study Undertale boss patterns and progress. Data is stored in your browser (localStorage).</p>
+    </section>
+
+    <section id="patterns" class="card">
+      <h2>Boss Patterns</h2>
+      <div id="boss-list"></div>
+      <button id="add-boss-btn">Add Custom Boss</button>
+    </section>
+
+    <section id="log" class="card">
+      <h2>Practice Log</h2>
+      <div id="log-controls">
+        <label for="log-filter">Filter by Boss:</label>
+        <select id="log-filter"><option value="All">All</option></select>
+      </div>
+      <div id="log-list"></div>
+      <form id="log-form">
+        <h3>New Log Entry</h3>
+        <label>
+          Boss:
+          <input id="log-boss" required list="boss-datalist" />
+        </label>
+        <datalist id="boss-datalist"></datalist>
+        <label>
+          Success:
+          <select id="log-success">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </label>
+        <label>
+          Notes:
+          <input id="log-notes" placeholder="Notes about the attempt" />
+        </label>
+        <button type="submit">Add Log</button>
+      </form>
+    </section>
+
+    <section id="print" class="card">
+      <h2>Printable Guide</h2>
+      <p>Generate a printer-friendly checklist for a boss.</p>
+      <button id="generate-print">Generate Print View</button>
+      <div id="print-area" class="hidden"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tip: Your data stays in your browser. You can export/import patterns using JSON if you wish.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
+
